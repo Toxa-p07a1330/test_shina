@@ -10,16 +10,13 @@ const MyMap = observer(() => {
         center: [contactsStore.selectedStore.latitude, contactsStore.selectedStore.longitude],
         zoom: 14,
     };
-    useEffect(()=>{
-        console.log(contactsStore.selectedStore)
-    }, [contactsStore.selectedStore])
     return <div>
         <YMaps>
             <div className={style.wrapper}>
                 <YMaps>
                     <Map state={state} style={{
-                        width: 500,
-                        height: 500
+                        width: 700,
+                        height: 700
                     }}>
                         <Placemark geometry={state.center}/>
                     </Map>
