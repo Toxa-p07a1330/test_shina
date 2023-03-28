@@ -1,5 +1,8 @@
 import {observer} from "mobx-react-lite";
 import {BOOT_STATES, contactsStore} from "../../store/contactsStore";
+import {ContactsWrapper} from "./components/contacts-wrapper/ContactsWrapper";
+import {MyMap} from "./components/map/MyMap";
+import style from "./style.module.scss"
 
 const Main = observer(() => {
     if (contactsStore.state === BOOT_STATES.NONE || contactsStore.state === BOOT_STATES.InPROGRESS)
@@ -11,8 +14,9 @@ const Main = observer(() => {
             Error
         </div>
     }
-    return <div>
-        {JSON.stringify(contactsStore.selectedStore)}
+    return <div className={style.wrapper}>
+        <ContactsWrapper/>
+        <MyMap/>
     </div>
 })
 export {Main}
