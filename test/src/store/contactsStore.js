@@ -42,6 +42,9 @@ class ContactsStore{
     setSelectedStore = (store)=>{
         this._selectedStore = store
     }
+    isActive = (pickPoint)=>{
+        return JSON.stringify(pickPoint) === JSON.stringify(this.selectedStore)
+    }
 }
 
 const contactsStore = new ContactsStore();

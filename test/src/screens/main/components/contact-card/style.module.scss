@@ -1,11 +1,28 @@
 .wrapper{
-  border: 1px solid red;
   background-color: #34393B;
   height: 70px;
   margin: 10px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px 25px;
+  & .title{
+    color: #808080;
+  font-size: 20px;
+  }
+  & .budgets{
+    display: flex;
+    flex-direction: row;
+    color: #808080;
+    & .budget{
+      background-color: #1F2829;
+      padding: 5px;
+      margin-right: 10px;
 
+    }
+  }
 }
 .active{
-  background-color: #1B2528;
+  background-color: rgb(56, 68, 72);
 }
