@@ -11,7 +11,7 @@ class ContactsStore{
         stores: [],
     };
     _state = BOOT_STATES.NONE;
-    selectedStore = null;
+    _selectedStore = null;
 
     constructor() {
         this.getUsersFromServer();
@@ -20,13 +20,19 @@ class ContactsStore{
     get state(){
         return this._state
     }
+    get pickPoints(){
+        return this._data.stores.pickPoints
+    }
+    get selectedStore(){
+        return this._selectedStore
+    }
     getUsersFromServer = async () => {
         try {
             const response = await fetch("https://express-shina.ru/vacancy/geo-state");
             const json = await response.json();
             this._data.stores = json;
             this._state = BOOT_STATES.SUCCESS;
-            this.selectedStore = json.pickPoints[0]
+            this._selectedStore = json.pickPoints[0]
         } catch (e) {
             console.log(e);
             this._state = BOOT_STATES.ERROR;
