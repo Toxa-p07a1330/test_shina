@@ -1,4 +1,5 @@
-import { makeAutoObservable } from "mobx";
+import {makeAutoObservable} from "mobx";
+
 const BOOT_STATES = {
     NONE: "none",
     SUCCESS: "success",
@@ -38,6 +39,9 @@ class ContactsStore{
             this._state = BOOT_STATES.ERROR;
         }
     };
+    setSelectedStore = (store)=>{
+        this._selectedStore = store
+    }
 }
 
 const contactsStore = new ContactsStore();
